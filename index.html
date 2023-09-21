@@ -1,21 +1,41 @@
-<!DOCTYPE html>
 <html>
-<head>
-    <title>TomTom Web Map</title>
-    <link rel="stylesheet"
+  <head>
+    <link
+      rel="stylesheet"
       type="text/css"
       href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps.css"
-         />
+    />
     <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps-web.min.js"></script>
-</head>
-<body>
-    <!-- Map container -->
-    <div id="map" style="width: 100%; height: 500px;"></div>
+  </head>
+  <body style="width: 100%; height: 100%; margin: 0; padding: 0;">
+    <div id="map" style="width: 100%; height: 100%;"></div>
+    <script>
+      var map = tt.map({
+        key: "qpl5J43p34rPrni1SlUDzAd9XDF2207E",
+        container: "map",
+        center: [-122.4194, 37.7749],
+        zoom: 12,
+        style: "./customdark.json"
+});
 
-    <!-- Include TomTom JavaScript SDK -->
-    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.12.0/maps/maps-web.min.js"></script>
+      // Add a marker at a specific location
+      var marker = new tt.Marker().setLngLat([-122.4194, 37.7749]).addTo(map);
 
-    <!-- Your JavaScript code to display the map and GeoJSON data -->
-    <script src="script.js"></script>
-</body>
+      // Add a popup to the marker
+      var popup = new tt.Popup({ offset: 30 }).setHTML("<p>Hello, world!</p>");
+      marker.setPopup(popup);
+
+      // Add a click event listener to the map
+      map.on("click", function (e) {
+        // Create a new marker at the clicked location
+        var newMarker = new tt.Marker().setLngLat(e.lngLat).addTo(map);
+
+        // Add a popup to the new marker
+        var newPopup = new tt.Popup({ offset: 30 }).setHTML(
+          "<p>Hi Aaron Golden!!</p>"
+        );
+        newMarker.setPopup(newPopup);
+      });
+    </script>
+  </body>
 </html>
