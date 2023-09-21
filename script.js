@@ -6,7 +6,7 @@ var map = tt.map({
     key: apiKey,
     container: 'map',
     style: 'tomtom://vector/1/basic-main',
-    center: [latitude, longitude], // Replace with your desired map center coordinates
+    center: [37.773972, -122.431297], // Replace with your desired map center coordinates
     zoom: 10 // Adjust the zoom level as needed
 });
 
