@@ -15,7 +15,7 @@ map.on('load', function () {
     // Replace 'your-geojson-file.geojson' with the URL to your GeoJSON file
     map.addSource('geojson-source', {
         type: 'geojson',
-        data: 'your-geojson-file.geojson'
+        data: 'https://github.com/Bolinster/Kuwait-Traffic-Stats/releases/download/Move/jobs_3504653_results_Kuwait_.geojson'
     });
 
     // Add a GeoJSON layer to the map
