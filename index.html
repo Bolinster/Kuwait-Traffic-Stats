@@ -17,25 +17,6 @@
         zoom: 12,
         style: "./customdark.json"
 });
-
-      // Add a marker at a specific location
-      var marker = new tt.Marker().setLngLat([-122.4194, 37.7749]).addTo(map);
-
-      // Add a popup to the marker
-      var popup = new tt.Popup({ offset: 30 }).setHTML("<p>Hello, world!</p>");
-      marker.setPopup(popup);
-
-      // Add a click event listener to the map
-      map.on("click", function (e) {
-        // Create a new marker at the clicked location
-        var newMarker = new tt.Marker().setLngLat(e.lngLat).addTo(map);
-
-        // Add a popup to the new marker
-        var newPopup = new tt.Popup({ offset: 30 }).setHTML(
-          "<p>Hi Aaron Golden!!</p>"
-        );
-        newMarker.setPopup(newPopup);
-      });
     </script>
   </body>
 </html>
